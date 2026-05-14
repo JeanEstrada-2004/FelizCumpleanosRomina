@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feliz cumplea&ntilde;os, Romina</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="hero__party" aria-hidden="true">
+        <span class="hero__confetti hero__confetti--one"></span>
+        <span class="hero__confetti hero__confetti--two"></span>
+        <span class="hero__confetti hero__confetti--three"></span>
+        <span class="hero__balloon hero__balloon--pink"></span>
+        <span class="hero__balloon hero__balloon--cyan"></span>
+        <div class="hero__cake">
+          <span class="hero__candle"></span>
+          <span class="hero__flame"></span>
+          <span class="hero__cake-top"></span>
+          <span class="hero__cake-base"></span>
+        </div>
+        <span class="hero__sticker">cumple de Romi</span>
+        <span class="hero__wish">hoy se celebra a la jefa</span>
+      </div>
+
+      <div class="hero__content">
+        <p class="hero__eyebrow">Para Romi</p>
+        <h1 class="hero__title" id="heroTitle">Bueno, Romi...</h1>
+        <p class="hero__text">
+          Bueno, Romi, no quer&iacute;a hacer solo un &ldquo;feliz cumplea&ntilde;os&rdquo; normal, porque sent&iacute;a que se quedaba corto. As&iacute; que hice esto, m&aacute;s que nada, para recordar un poco de todo este caos que de alguna forma se volvi&oacute; nuestro.
+        </p>
+        <div class="hero__tags" role="list" aria-label="Detalles de la portada">
+          <span role="listitem">cumple modo d&uacute;o</span>
+          <span role="listitem">tortita virtual</span>
+          <span role="listitem">un free edition</span>
+        </div>
+        <button class="hero__button" id="startJourney" type="button">Ya, empezar</button>
+      </div>
+    </section>
+
+    <section class="memory-scroll" aria-labelledby="memoryScrollTitle">
+      <div class="memory-scroll__sticky">
+        <div class="memory-scene is-active" aria-live="polite">
+          <span class="memory-scene__badge">Recuerdos desbloqueados</span>
+          <p class="memory-scene__number" data-memory-number>01</p>
+          <h2 class="memory-scene__title" id="memoryScrollTitle" data-memory-title>El inicio del caos</h2>
+          <p class="memory-scene__text" data-memory-text>
+            Bueno, creo que todo empez&oacute; m&aacute;s o menos por ah&iacute;, con un &ldquo;un free&rdquo; que parec&iacute;a normal.
+          </p>
+
+          <div class="memory-progress" aria-label="Progreso de recuerdos">
+            <p class="memory-progress__text" id="memoryProgressText">1 de 7 recuerdos</p>
+            <div class="memory-progress__track" aria-hidden="true">
+              <div class="memory-progress__bar" id="memoryProgressBar"></div>
+            </div>
+          </div>
+
+          <div class="memory-note">
+            <span class="memory-note__label">Nota desbloqueada</span>
+            <p class="memory-detail" data-memory-detail>
+              Y es que al inicio era solo jugar, esperar, molestar un rato y ya. Pero no s&eacute;, de alguna forma se fue quedando la costumbre.
+            </p>
+          </div>
+
+          <div class="memory-scene__dots" aria-hidden="true">
+            <span data-memory-dot class="is-active"></span>
+            <span data-memory-dot></span>
+            <span data-memory-dot></span>
+            <span data-memory-dot></span>
+            <span data-memory-dot></span>
+            <span data-memory-dot></span>
+            <span data-memory-dot></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="memory-scroll__steps" aria-hidden="true">
+        <article class="memory-step is-active" data-memory-step="0"></article>
+        <article class="memory-step" data-memory-step="1"></article>
+        <article class="memory-step" data-memory-step="2"></article>
+        <article class="memory-step" data-memory-step="3"></article>
+        <article class="memory-step" data-memory-step="4"></article>
+        <article class="memory-step" data-memory-step="5"></article>
+        <article class="memory-step" data-memory-step="6"></article>
+      </div>
+    </section>
+
+    <section class="inside-jokes" aria-labelledby="insideJokesTitle">
+      <div class="inside-jokes__header">
+        <h2 id="insideJokesTitle">Cosas que solo t&uacute; entender&iacute;as</h2>
+        <p>
+          Palabras normales para cualquiera, pero con historial propio para nosotros.
+        </p>
+      </div>
+
+      <div class="joke-chip-list" aria-label="Frases internas">
+        <button class="joke-chip" type="button" data-joke="un-free">Un free</button>
+        <button class="joke-chip" type="button" data-joke="pipilandia">Pipilandia</button>
+        <button class="joke-chip" type="button" data-joke="jefa">A sus &oacute;rdenes, jefa</button>
+        <button class="joke-chip" type="button" data-joke="calisto">Ya listo calisto</button>
+        <button class="joke-chip" type="button" data-joke="mameta">Lesto mameta</button>
+        <button class="joke-chip" type="button" data-joke="jeanpipi">Jeanpipi</button>
+        <button class="joke-chip" type="button" data-joke="duo-dinamico">D&uacute;o din&aacute;mico</button>
+        <button class="joke-chip" type="button" data-joke="mejor-duo">Solo el mejor d&uacute;o</button>
+      </div>
+
+      <div class="joke-result" id="jokeResult" aria-live="polite"></div>
+    </section>
+
+    <section class="duo-mode" aria-labelledby="duoModeTitle">
+      <h2 id="duoModeTitle">Modo d&uacute;o, supongo</h2>
+
+      <div class="duo-mode__players">
+        <article class="duo-player">
+          <p class="duo-player__label">Jugadora 1</p>
+          <h3 class="duo-player__name">Romi</h3>
+          <p class="duo-player__role">La que reniega, pero igual entra.</p>
+        </article>
+
+        <article class="duo-player">
+          <p class="duo-player__label">Jugador 2</p>
+          <h3 class="duo-player__name">Jeanpipi</h3>
+          <p class="duo-player__role">El que molesta, pero acompa&ntilde;a.</p>
+        </article>
+      </div>
+
+      <p class="duo-mode__status">
+        Estado: <strong>D&uacute;o din&aacute;mico desbloqueado, aunque a veces medio fallado.</strong>
+      </p>
+    </section>
+
+    <section class="final-letter" aria-labelledby="finalLetterTitle">
+      <div class="final-letter__intro">
+        <span class="final-letter__badge" aria-live="polite">Carta final pendiente</span>
+        <h2 class="final-letter__title" id="finalLetterTitle">Y ahora s&iacute;...</h2>
+        <p class="final-letter__text">
+          Despu&eacute;s de desbloquear algunos recuerdos, queda abrir la parte m&aacute;s importante.
+        </p>
+        <p class="final-letter__text final-letter__text--secondary">
+          No es un regalo caro, ni perfecto, ni hecho para impresionar. Es un detalle hecho con tiempo, con memoria y con cari&ntilde;o.
+        </p>
+        <button class="final-letter__button" id="goToLetter" type="button">Ir a la carta final</button>
+      </div>
+
+      <div class="birthday-scene" aria-label="Tarjeta de cumplea&ntilde;os para Romina">
+        <div class="floating-light light-one"></div>
+        <div class="floating-light light-two"></div>
+        <div class="floating-light light-three"></div>
+
+        <div class="balloons" aria-hidden="true">
+          <span class="balloon balloon-rose"></span>
+          <span class="balloon balloon-gold"></span>
+          <span class="balloon balloon-teal"></span>
+        </div>
+
+        <div class="card-shell">
+          <div class="card" id="birthdayCard">
+            <button class="card-front" id="cardToggle" type="button" aria-expanded="false" aria-controls="cardInside">
+              <span class="cover-label">Para Romi</span>
+              <span class="star star-one"></span>
+              <span class="star star-two"></span>
+              <span class="star star-three"></span>
+
+              <span class="cake" aria-hidden="true">
+                <span class="cake-candle"></span>
+                <span class="cake-flame"></span>
+                <span class="cake-top"></span>
+                <span class="cake-base"></span>
+                <span class="cake-plate"></span>
+              </span>
+
+              <span class="front-title">Feliz cumplea&ntilde;os</span>
+              <span class="front-name">Loca</span>
+              <span class="front-note">Un regalo que no cuesta plata, pero s&iacute; tiempo</span>
+            </button>
+
+            <article class="card-inside" id="cardInside">
+              <div class="inside-header">
+                <span class="small-title">Hoy celebro tu vida</span>
+                <h1>Feliz cumplea&ntilde;os, Romi</h1>
+              </div>
+
+              <div class="message">
+                <p>
+                  Bueno, Romi, no s&eacute; muy bien c&oacute;mo empezar esto sin que suene demasiado formal o raro, as&iacute; que lo dir&eacute; normal: feliz cumplea&ntilde;os, loca.
+                </p>
+                <p>
+                  Y es que no quer&iacute;a hacerte solo un mensaje de &ldquo;feliz cumple&rdquo; y ya, porque sent&iacute;a que se quedaba un poco corto. No porque tenga que hacer algo enorme, sino porque quer&iacute;a que esto tuviera un poco de nosotros.
+                </p>
+                <p>
+                  No s&eacute; en qu&eacute; momento un &ldquo;un free&rdquo;, unas partidas, los apodos raros, la jefa, el d&uacute;o din&aacute;mico y todo ese desorden terminaron volvi&eacute;ndose parte de una amistad que aprecio bastante. Pero pas&oacute;, y me alegra que haya pasado.
+                </p>
+                <p>
+                  Gracias por las risas, por las veces que aparec&iacute;as de la nada, por renegar incluso jugando, por seguirme las bromas y por hacer que cosas simples se vuelvan recuerdos bonitos. Aunque bueno, algunas cosas no tienen mucho sentido, pero justamente por eso son nuestras.
+                </p>
+                <p>
+                  Este detalle no es caro, ni perfecto, ni pretende ser la gran cosa. M&aacute;s que nada quer&iacute;a darte algo hecho con tiempo, con memoria y con cari&ntilde;o, pero sin ponerme demasiado intenso porque tampoco es la idea, ya me entiendes.
+                </p>
+                <p>
+                  Feliz cumplea&ntilde;os, Romi. Espero que este nuevo a&ntilde;o te traiga tranquilidad, alegr&iacute;a, buenas personas cerca y momentos que te hagan sentir querida de verdad.
+                </p>
+                <p>
+                  Gracias por ser mi d&uacute;o din&aacute;mico.
+                </p>
+              </div>
+
+              <div class="signature">
+                <span>Con cari&ntilde;o,</span>
+                <strong>Jeanpipi</strong>
+                <small>tu d&uacute;o din&aacute;mico</small>
+              </div>
+
+              <button class="close-card" id="closeCard" type="button">Cerrar tarjeta</button>
+            </article>
+          </div>
+        </div>
+
+        <div class="wish-strip" aria-label="Deseos para Romina">
+          <span>Que tu d&iacute;a brille bonito</span>
+          <span>Un abrazo a la distancia</span>
+          <span>Que se cumplan tus sue&ntilde;os</span>
+        </div>
+      </div>
+
+      <div class="completion-note" role="status" aria-live="polite">
+        <p class="completion-note__label">Ya, ahora s&iacute;...</p>
+        <p class="completion-note__text">Feliz cumplea&ntilde;os, loca.</p>
+      </div>
+
+      <div class="confetti-layer" id="confettiLayer" aria-hidden="true"></div>
+    </section>
+  </main>
+
+  <script src="scrip.js"></script>
+</body>
+</html>
