@@ -124,6 +124,8 @@ let hasOpenedFinalLetter = false;
 let activeMemoryIndex = 0;
 let memoryObserver;
 let memoryChangeTimer;
+let memoryUpdateFrame = 0;
+let queuedMemoryIndex = 0;
 
 function init() {
   app = document.querySelector(SELECTORS.app);
@@ -230,7 +232,7 @@ function handleMemoryIntersections(entries) {
   }
 
   const nextIndex = Number(visibleEntry.target.dataset.memoryStep);
-  updateMemoryScene(nextIndex);
+  scheduleMemorySceneUpdate(nextIndex);
 }
 
 function updateMemoryFromScroll() {
@@ -253,7 +255,22 @@ function updateMemoryFromScroll() {
     }
   });
 
-  updateMemoryScene(closestIndex);
+  scheduleMemorySceneUpdate(closestIndex);
+}
+
+function scheduleMemorySceneUpdate(index) {
+  queuedMemoryIndex = index;
+
+  if (memoryUpdateFrame) {
+    return;
+  }
+
+  const runNextFrame = window.requestAnimationFrame || ((callback) => window.setTimeout(callback, 16));
+
+  memoryUpdateFrame = runNextFrame(() => {
+    memoryUpdateFrame = 0;
+    updateMemoryScene(queuedMemoryIndex);
+  });
 }
 
 function updateMemoryScene(index, options = {}) {
